@@ -12,6 +12,12 @@ import requests
 from brain import get_message
 from quotes import get_quote
 from utils import escape_html
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("TG_API_KEY")
 
 
 category = "happiness"
@@ -21,9 +27,6 @@ if response.status_code == requests.codes.ok:
     print(response.text)
 else:
     print("Error:", response.status_code, response.text)
-
-
-API_KEY = "7202132144:AAF9Hxv18K4Zt3zU8K0jK1ycBthkivlrVZ4"
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

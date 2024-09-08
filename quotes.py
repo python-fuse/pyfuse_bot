@@ -1,6 +1,11 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-API_KEY = "CVp+AeIR/bk5xYFh7ZdiAg==pULXxey5OMzllvgf"
+load_dotenv()
+
+
+API_KEY = os.getenv("QUOTES_API_KEY")
 
 
 def fetch_data(api_url):
@@ -17,6 +22,3 @@ def get_quote(category):
     if "error" in res:
         return res
     return res[0]
-
-
-# def get_limit
