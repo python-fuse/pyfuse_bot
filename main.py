@@ -13,6 +13,7 @@ from brain import get_message
 from quotes import get_quote
 from utils import escape_html
 
+
 category = "happiness"
 api_url = "https://api.api-ninjas.com/v1/quotes?category={}".format(category)
 response = requests.get(api_url, headers={"X-Api-Key": "YOUR_API_KEY"})
